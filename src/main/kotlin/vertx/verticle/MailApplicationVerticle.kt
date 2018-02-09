@@ -64,7 +64,7 @@ class MailApplicationVerticle : AbstractVerticle() {
             from = MailApplicationConfig.mailConfig.getString(MailConfigConstants.MAIL_DEFAULT_FROM)
             to = listOf(message.getString("email"))
             subject = "亲爱的\"" + message.getString("username") + "\", 欢迎您加入Bookish !"
-            text = TemplateFileLoader.loadRegisterMailTemplate()
+            html = TemplateFileLoader.loadRegisterMailTemplate()
                     .replace("USERNAME", message.getString("username"))
         }
 
@@ -90,7 +90,7 @@ class MailApplicationVerticle : AbstractVerticle() {
             from = MailApplicationConfig.mailConfig.getString(MailConfigConstants.MAIL_DEFAULT_FROM)
             to = message.getString("emails").split(",")
             subject = "Bookish博客网:您订阅的作者[${message.getString("author")}]发布了新文章!"
-            text = TemplateFileLoader.loadSubscribeMailTemplate()
+            html = TemplateFileLoader.loadSubscribeMailTemplate()
                     .replace("AUTHOR", message.getString("author"))
                     .replace("ARTICLE_TITLE", message.getString("title"))
                     .replace("ARTICLE_CODE", message.getString("articleId"))
