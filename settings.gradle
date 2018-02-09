@@ -1,2 +1,2 @@
 rootProject.name = 'vertx-bookish-mail'
-//includeFlat 'vertx-activemq-client'
+includeFlat 'vertx-activemq-client'
