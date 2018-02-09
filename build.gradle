@@ -1,0 +1,63 @@
+group 'fun.bookish.vertx'
+version '2.0'
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'kotlin'
+apply plugin: 'java'
+
+
+buildscript {
+
+    ext.kotlin_version = '1.2.10'
+
+    repositories {
+        maven{
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    }
+}
+
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven{
+        url "http://maven.aliyun.com/nexus/content/groups/public/"
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+shadowJar  {
+    classifier = 'fat'
+    manifest {
+        attributes 'Main-Class': 'ApplicationMain'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    //compile project(':vertx-activemq-client')
+
+    compile 'io.vertx:vertx-mail-client:3.5.0'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    compile 'org.slf4j:slf4j-log4j12:1.7.21'
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile 'org.slf4j:slf4j-api:RELEASE'
+
+}

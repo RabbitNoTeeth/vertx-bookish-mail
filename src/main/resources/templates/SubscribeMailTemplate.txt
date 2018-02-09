@@ -1,0 +1,26 @@
+<div style="margin-left: auto;margin-right: auto;width: 800px;
+                background-color: #333333;margin-top: 30px;border-radius: 6px">
+      <div style="padding: 20px;">
+        <p style="font-size: 18px;color: white;font-weight: bold;font-style: italic">Bookish&nbsp;&nbsp;:</p>
+      </div>
+      <div style="padding: 20px;padding-top: 10px">
+        <p style="font-size: 16px;color: white">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          您在
+          <span style="font-style: italic;">Bookish</span>
+          博客网订阅的作者
+          <span style="font-weight: bold">&nbsp;AUTHOR&nbsp;</span>
+          发布了新文章
+          <span style="font-weight: bold">&nbsp;《ARTICLE_TITLE》&nbsp;</span>
+          !
+          &nbsp;&nbsp;&nbsp;&nbsp;
+
+        </p>
+        <p style="font-size: 12px;color: #999999;margin-top: 20px">
+          如果您希望不再接收订阅通知邮件,可在网站首页的退订选项中取消订阅 .
+        </p>
+        <p style="font-size: 12px;color: black;margin-top: 10px;text-align: right">
+          <a href="http://47.94.206.26/loadArticle?id=ARTICLE_CODE" target="_blank" style="color:white">阅读文章>></a>
+        </p>
+      </div>
+   </div>
